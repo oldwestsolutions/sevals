@@ -385,7 +385,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 lg:py-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Image */}
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 hidden lg:block">
               <div className="bg-gray-800 rounded-2xl lg:rounded-3xl aspect-[4/5] flex items-center justify-center border border-gray-700 overflow-hidden">
                 {/* Replace this with your actual image */}
                 <img 
