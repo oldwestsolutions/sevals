@@ -15,7 +15,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 h-screen bg-[#0f0f0f] fixed left-0 top-0 pt-16">
+    <aside className="w-64 h-screen bg-[#0f0f0f] fixed left-0 top-0 pt-14 sm:pt-16 hidden lg:block">
       <div className="px-4 py-2">
         <div className="space-y-1">
           {menuItems.map((item) => (

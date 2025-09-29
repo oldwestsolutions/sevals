@@ -6,9 +6,9 @@ export default function Dashboard() {
   return (
     <div className="flex min-h-screen bg-black">
       <Sidebar />
-      <main className="flex-1 ml-64">
+      <main className="flex-1 ml-0 lg:ml-64">
         <Header />
-        <div className="pt-16">
+        <div className="pt-14 sm:pt-16">
           <VideoGrid />
         </div>
       </main>

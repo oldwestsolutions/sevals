@@ -362,18 +362,18 @@ export default function Home() {
         isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-14 sm:h-16">
             <div className="flex items-center">
               <img 
                 src="/logo.png" 
                 alt="Logo" 
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto"
               />
             </div>
             
             <div className="flex items-center">
-              <button className="md:hidden p-2 hover:bg-[#1a1a1a] rounded-full transition-colors">
-                <Bars3Icon className="h-6 w-6 text-gray-400" />
+              <button className="sm:hidden p-2 hover:bg-[#1a1a1a] rounded-full transition-colors">
+                <Bars3Icon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400" />
               </button>
             </div>
           </div>
@@ -381,21 +381,23 @@ export default function Home() {
       </header>
 
       {/* Full Screen Hero Section */}
-      <div className="relative min-h-screen bg-black flex items-center shadow-2xl">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative min-h-screen bg-black flex items-center shadow-2xl pt-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 lg:py-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Image */}
-            <div className="relative">
-              <div className="bg-gray-800 rounded-3xl aspect-[4/5] flex items-center justify-center border border-gray-700 overflow-hidden">
+            <div className="relative order-2 lg:order-1">
+              <div className="bg-gray-800 rounded-2xl lg:rounded-3xl aspect-[4/5] flex items-center justify-center border border-gray-700 overflow-hidden">
                 {/* Replace this with your actual image */}
                 <img 
                   src="/assets/goth.png" 
                   alt="Hero Image" 
                   className="w-full h-full object-cover rounded-3xl"
                   onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                    const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (nextElement) {
+                      nextElement.style.display = 'flex';
+                    }
                   }}
                 />
                 <div className="text-center hidden">
@@ -410,18 +412,18 @@ export default function Home() {
             </div>
 
             {/* Right Column - Login/Signup Form */}
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+            <div className="space-y-6 lg:space-y-8 order-1 lg:order-2">
+              <div className="space-y-4 lg:space-y-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
                   Welcome
                 </h1>
-                <p className="text-xl md:text-2xl text-white leading-relaxed">
+                <p className="text-lg sm:text-xl lg:text-2xl text-white leading-relaxed">
                   Join millions of creators and fans on the world's most intimate platform.
                 </p>
               </div>
               
               {/* Login/Signup Form */}
-              <div className="bg-black/50 backdrop-blur-lg rounded-3xl p-8 border border-gray-800">
+              <div className="bg-black/50 backdrop-blur-lg rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-gray-800">
                 <div className="flex space-x-4 mb-6">
                   <button 
                     onClick={() => setShowLogin(true)}
@@ -442,14 +444,14 @@ export default function Home() {
                 </div>
                 
                 {/* Sign In Form */}
-                <form onSubmit={handleLogin} className="space-y-6">
+                <form onSubmit={handleLogin} className="space-y-4 lg:space-y-6">
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">Email</label>
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-4 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
+                      className="w-full px-4 py-3 lg:py-4 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors text-base"
                       placeholder="Enter your email"
                       required
                     />
@@ -461,7 +463,7 @@ export default function Home() {
                       type="text"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      className="w-full px-4 py-4 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
+                      className="w-full px-4 py-3 lg:py-4 bg-[#0a0a0a] border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors text-base"
                       placeholder="Enter your username"
                       required
                     />
@@ -469,7 +471,7 @@ export default function Home() {
                   
                   <button
                     type="submit"
-                    className="w-full bg-teal-500 text-white py-4 rounded-xl text-lg font-bold hover:bg-teal-600 transition-all duration-200"
+                    className="w-full bg-teal-500 text-white py-3 lg:py-4 rounded-xl text-base lg:text-lg font-bold hover:bg-teal-600 transition-all duration-200"
                   >
                     Create Account
                   </button>
