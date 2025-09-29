@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YouTube Clone",
-  description: "A YouTube-style interface built with Next.js",
+  title: "Creator Platform",
+  description: "The ultimate platform for content creators to share, monetize, and grow their audience",
 };
 
 export default function RootLayout({

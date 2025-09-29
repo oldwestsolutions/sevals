@@ -1,17 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { HomeIcon, FireIcon, VideoCameraIcon, UserGroupIcon, BookmarkIcon, ClockIcon, HandThumbUpIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, BookOpenIcon, VideoCameraIcon, ClockIcon, HandThumbUpIcon } from '@heroicons/react/24/outline';
 
 const Sidebar = () => {
   const menuItems = [
-    { icon: HomeIcon, label: 'Home', href: '/' },
-    { icon: FireIcon, label: 'Trending', href: '/trending' },
-    { icon: VideoCameraIcon, label: 'Subscriptions', href: '/subscriptions' },
-    { icon: UserGroupIcon, label: 'Community', href: '/community' },
+    { icon: HomeIcon, label: 'Home', href: '/dashboard' },
+    { icon: BookOpenIcon, label: 'Library', href: '/trending' },
+    { icon: VideoCameraIcon, label: 'Feed', href: '/feed' },
   ];
 
   const libraryItems = [
-    { icon: BookmarkIcon, label: 'Library', href: '/library' },
     { icon: ClockIcon, label: 'History', href: '/history' },
     { icon: HandThumbUpIcon, label: 'Liked Videos', href: '/liked' },
   ];
